@@ -18,9 +18,8 @@ public class Kata2 {
        
         Map<Integer, Integer> map = new HashMap();
        
-        for (int i = 0; i < array.length; i++) {
-            if(map.containsKey(array[i])) map.replace(array[i], map.get(array[i])+1);
-            else map.put(array[i], 1);
+        for (int i : array) {
+            map.put(i, map.containsKey(i) ? map.get(i)+1 : 1);
         }
        
         for (Integer key : map.keySet()) {
