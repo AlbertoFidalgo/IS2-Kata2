@@ -16,12 +16,8 @@ public class Kata2 {
         }
         System.out.println(Arrays.toString(array));
        
-        Map<Integer, Integer> map = new HashMap();
-       
-        for (int i : array) {
-            map.put(i, map.containsKey(i) ? map.get(i)+1 : 1);
-        }
-       
+        Histogram histogram = new Histogram(array);
+        Map<Integer, Integer> map = histogram.getHistogram();
         for (Integer key : map.keySet()) {
         System.out.println("Key = " + key + "   Value = " + map.get(key));
         }
