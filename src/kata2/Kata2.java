@@ -1,6 +1,5 @@
 package kata2;
 
-import java.util.Random;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,16 +8,12 @@ public class Kata2 {
 
     public static void main(String[] args) {
        
-        Random random = new Random();
-        Integer[] array = new Integer[20];
-        for (int i = 0; i < array.length; i++) {
-             array[i] = random.nextInt(5);
-        }
+        String[] array = {"Pepe", "Maria", "Pepe", "Pepe", "Maria", "Alberto", "Samuel"};
         System.out.println(Arrays.toString(array));
        
         Histogram histogram = new Histogram(array);
-        Map<Integer, Integer> map = histogram.getHistogram();
-        for (Integer key : map.keySet()) {
+        Map<String, Integer> map = histogram.getHistogram();
+        for (String key : map.keySet()) {
         System.out.println("Key = " + key + "   Value = " + map.get(key));
         }
     }
